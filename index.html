@@ -3,167 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lena Bella Premium</title>
+<title>Lena Bella 💕</title>
 
 <style>
 body {
   margin:0;
-  font-family:'Segoe UI', Arial;
-  background:linear-gradient(180deg,#0a0a0a,#1a1a1a);
+  font-family:'Segoe UI';
+  background:linear-gradient(#0a0a0a,#1a1a1a);
   color:white;
 }
 
 header {
   background:linear-gradient(90deg,#ff4d88,#ff99cc);
-  padding:25px;
+  padding:20px;
   text-align:center;
-  box-shadow:0 5px 20px rgba(0,0,0,0.5);
 }
 
-h1 {margin:0; font-size:42px; letter-spacing:1px;}
-
-nav {margin-top:10px;}
-nav a {
-  color:white;
-  margin:0 15px;
-  text-decoration:none;
-  font-weight:bold;
-  transition:0.3s;
-}
-nav a:hover {color:black;}
+h1 {margin:0; font-size:40px;}
 
 .hero {
-  height:420px;
+  height:400px;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   text-align:center;
-  background:radial-gradient(circle,#ff4d88 0%, #0a0a0a 70%);
-}
-.hero h2 {
-  font-size:38px;
-  max-width:700px;
+  background:radial-gradient(circle,#ff4d88,#000);
 }
 
-.section {
-  padding:60px 20px;
-  max-width:1200px;
-  margin:auto;
-}
+.section {padding:40px;}
 
-h2 {
-  color:#ff66a3;
-  margin-bottom:20px;
-}
-
-h3 {
-  margin-top:40px;
-  color:#ff99cc;
-}
+h2 {color:#ff66a3;}
 
 .gallery {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
 }
 
 .box {
-  background:#141414;
-  height:260px;
-  border-radius:20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:2px dashed #333;
-  transition:0.3s;
+  position:relative;
+  border-radius:15px;
+  overflow:hidden;
 }
 
-.box:hover {
-  transform:scale(1.07);
-  border-color:#ff4d88;
-  box-shadow:0 0 25px rgba(255,77,136,0.4);
+.box img {
+  width:100%;
+  height:240px;
+  object-fit:cover;
 }
 
-.pricing {
-  display:flex;
-  flex-wrap:wrap;
-  gap:30px;
-  justify-content:center;
-}
+/* LOCK */
+.locked img {filter:blur(10px);}
 
-.card {
-  background:linear-gradient(180deg,#1c1c1c,#111);
-  padding:30px;
-  border-radius:25px;
-  width:280px;
+.overlay {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
   text-align:center;
-  transition:0.3s;
-  border:1px solid #333;
-}
-
-.card:hover {
-  transform:translateY(-12px) scale(1.03);
-  box-shadow:0 0 40px rgba(255,105,180,0.6);
-}
-
-.price {
-  font-size:36px;
-  color:#ff4d88;
-  margin:15px 0;
 }
 
 .btn {
-  padding:15px 25px;
-  background:linear-gradient(90deg,#ff4d88,#ff99cc);
+  padding:10px 20px;
+  background:hotpink;
   border:none;
+  border-radius:20px;
   color:white;
-  border-radius:30px;
   cursor:pointer;
-  font-size:16px;
-  transition:0.3s;
 }
 
-.btn:hover {
-  transform:scale(1.08);
-  box-shadow:0 0 20px rgba(255,105,180,0.6);
-}
-
-.badge {
-  background:gold;
-  color:black;
-  padding:5px 10px;
-  border-radius:10px;
-  font-size:12px;
-  position:absolute;
-  margin-top:-15px;
-}
-
-.testimonials {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+/* PRICING */
+.pricing {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
   gap:20px;
 }
 
-.testimonial {
-  background:#141414;
+.card {
+  background:#1c1c1c;
   padding:20px;
-  border-radius:15px;
-  border:1px solid #333;
+  border-radius:20px;
+  width:240px;
+  text-align:center;
   transition:0.3s;
 }
 
-.testimonial:hover {
+.card:hover {
   transform:scale(1.05);
-  border-color:#ff4d88;
+  box-shadow:0 0 25px hotpink;
 }
 
-footer {
-  text-align:center;
-  padding:30px;
-  color:#aaa;
-  border-top:1px solid #222;
+.price {
+  font-size:28px;
+  color:hotpink;
 }
 
+/* POPUP */
+.popup {
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#111;
+  padding:10px 15px;
+  border-radius:10px;
+  font-size:14px;
+  display:none;
+}
 </style>
 </head>
 
@@ -171,117 +117,99 @@ footer {
 
 <header>
 <h1>Lena Bella 💕</h1>
-<nav>
-<a href="#">Home</a>
-<a href="#gallery">Gallery</a>
-<a href="#pricing">Subscribe</a>
-<a href="#reviews">Reviews</a>
-<a href="#contact">Contact</a>
-</nav>
 </header>
 
 <div class="hero">
-  <h2>Unlock My Private World 🔥<br>Exclusive • Premium • Personal</h2>
+<h2>Exclusive Private Content 🔥</h2>
 </div>
 
-<div id="gallery" class="section">
-<h2>📸 Content Catalogs</h2>
+<div class="section">
 
-<h3>💕 Daily Photos</h3>
+<h2>📸 Daily Photos</h2>
 <div class="gallery">
-<div class="box">Foto</div>
-<div class="box">Foto</div>
-<div class="box">Foto</div>
-<div class="box">Foto</div>
+<div class="box"><img src="foto1.jpg"></div>
+<div class="box"><img src="foto2.jpg"></div>
 </div>
 
-<h3>🔥 Exclusive Shots</h3>
+<h2>🔥 Exclusive</h2>
 <div class="gallery">
-<div class="box">Foto</div>
-<div class="box">Foto</div>
-<div class="box">Foto</div>
-<div class="box">Foto</div>
+<div class="box"><img src="foto3.jpg"></div>
+<div class="box"><img src="foto4.jpg"></div>
 </div>
 
-<h3>💎 Premium Content</h3>
+<h2>💎 Premium (LOCKED)</h2>
 <div class="gallery">
-<div class="box">Foto</div>
-<div class="box">Foto</div>
-<div class="box">Foto</div>
-<div class="box">Foto</div>
+
+<div class="box locked">
+<img src="foto5.jpg">
+<div class="overlay">
+<p>🔒 Locked</p>
+<a href="https://paypal.me/lenaBellaxX/20">
+<button class="btn">Unlock €20</button>
+</a>
+</div>
 </div>
 
-<h3>🌴 Lifestyle</h3>
-<div class="gallery">
-<div class="box">Foto</div>
-<div class="box">Foto</div>
-<div class="box">Foto</div>
-<div class="box">Foto</div>
+<div class="box locked">
+<img src="foto6.jpg">
+<div class="overlay">
+<p>🔒 Locked</p>
+<a href="https://paypal.me/lenaBellaxX/20">
+<button class="btn">Unlock €20</button>
+</a>
 </div>
-
-<h3>💖 Favorites</h3>
-<div class="gallery">
-<div class="box">Foto</div>
-<div class="box">Foto</div>
-<div class="box">Foto</div>
-<div class="box">Foto</div>
 </div>
 
 </div>
 
-<div id="pricing" class="section">
-<h2>💸 Choose Your Plan</h2>
+</div>
+
+<div class="section">
+
+<h2>💸 Subscribe</h2>
+
 <div class="pricing">
 
 <div class="card">
-<h3>Basic 💕</h3>
+<h3>Basic</h3>
 <div class="price">€20</div>
-<p>✔ Weekly content<br>✔ Basic access</p>
-<a href="https://www.paypal.com/paypalme/jouwnaam" target="_blank">
-<button class="btn">Subscribe</button>
-</a>
+<a href="https://paypal.me/lenaBellaxX/20"><button class="btn">Buy</button></a>
 </div>
 
 <div class="card">
-<span class="badge">POPULAR</span>
-<h3>Premium 🔥</h3>
+<h3>Premium</h3>
 <div class="price">€50</div>
-<p>✔ Daily content<br>✔ Exclusive photos<br>✔ Priority DM</p>
-<a href="https://www.paypal.com/paypalme/jouwnaam" target="_blank">
-<button class="btn">Subscribe</button>
-</a>
+<a href="https://paypal.me/lenaBellaxX/50"><button class="btn">Buy</button></a>
 </div>
 
 <div class="card">
-<h3>VIP 💎</h3>
+<h3>VIP</h3>
 <div class="price">€100</div>
-<p>✔ ALL content<br>✔ Private content<br>✔ Custom requests</p>
-<a href="https://www.paypal.com/paypalme/jouwnaam" target="_blank">
-<button class="btn">Subscribe</button>
-</a>
+<a href="https://paypal.me/lenaBellaxX/100"><button class="btn">Buy</button></a>
 </div>
 
 </div>
+
 </div>
 
-<div id="reviews" class="section">
-<h2>💬 Reviews</h2>
-<div class="testimonials">
-<div class="testimonial">"Beste content ooit 🔥"</div>
-<div class="testimonial">"100% waard"</div>
-<div class="testimonial">"Ik blijf subscribe 💕"</div>
-</div>
-</div>
+<!-- POPUP -->
+<div class="popup" id="popup"></div>
 
-<div id="contact" class="section">
-<h2>💌 Contact</h2>
-<p>Email: jouw@email.com</p>
-<p>DM voor speciale requests</p>
-</div>
+<script>
+const names = ["Mike","Alex","Jordan","Chris","Sam","Leo"];
+function showPopup(){
+  let name = names[Math.floor(Math.random()*names.length)];
+  document.getElementById("popup").innerHTML =
+  "🔥 " + name + " just subscribed!";
+  document.getElementById("popup").style.display="block";
 
-<footer>
-© 2026 Lena Bella - Premium Experience
-</footer>
+  setTimeout(()=>{
+    document.getElementById("popup").style.display="none";
+  },3000);
+}
+
+setInterval(showPopup,5000);
+</script>
 
 </body>
 </html>
